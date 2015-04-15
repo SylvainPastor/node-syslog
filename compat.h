@@ -123,7 +123,9 @@ class ReturnableHandleScope {
   inline explicit ReturnableHandleScope(const ArgumentType& args);
   inline ReturnType Return();
   inline ReturnType Return(bool value);
+#ifndef __arm__
   inline ReturnType Return(intptr_t value);
+#endif
   inline ReturnType Return(int value);
   inline ReturnType Return(double value);
   inline ReturnType Return(const char* value);

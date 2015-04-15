@@ -120,9 +120,11 @@ ReturnType ReturnableHandleScope::Return(bool value) {
   return Return(Boolean::New(isolate(), value));
 }
 
+#ifndef __arm__
 ReturnType ReturnableHandleScope::Return(intptr_t value) {
   return Return(Integer::New(isolate(), value));
 }
+#endif
 
 ReturnType ReturnableHandleScope::Return(int value) {
   return Return(Integer::New(isolate(), value));
